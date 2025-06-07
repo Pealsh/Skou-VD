@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "再生",
+    "version": "1",
+    "description": "再生する拡張機能",
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "host_permissions": [
+      "https://www.nnn.ed.nico/*",
+      "https://cdn.nnn.ed.nico/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.nnn.ed.nico/*",
+          "https://cdn.nnn.ed.nico/*"
+        ],
+        "js": ["content.js"],
+        "run_at": "document_idle",
+        "all_frames": true
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "自動再生設定"
+    }
+  }
